@@ -46,12 +46,18 @@ if (isset($_POST['submit'])) {
             <input type="text" name="arrayInput">
             <input type="submit" value="Calculate" name="submit">
         </form>
+        <?php if (isset($_POST['submit'])) { ?>
+        <section id="input">
+            <h2>Input</h2>
+            <p><?=implode($numSet, ", ")?></p>
+        </section>
         <section id="output">
             <h2>Output</h2>
             <p>Mean: <?= (isset($mean))?$mean:"" ?></p>
             <p>Median: <?= (isset($median))?$median:"" ?></p>
             <p>Mode: <?= (isset($mode))?$mode:"" ?></p>
         </section>
+        <?php } ?>
     </main>
     
     
